@@ -8,9 +8,11 @@ import {
   StyledText,
   StyledProductButton,
 } from "./Product.styled";
+import { Link } from "react-router-dom";
 
 const Product = ({ data }) => {
-  const { description, image, price, title } = data;
+  const { id, description, image, price, title } = data;
+
   return (
     <CardContiner>
       <StyledSpan>${price}</StyledSpan>
@@ -18,7 +20,10 @@ const Product = ({ data }) => {
       <StyledTitle>{title}</StyledTitle>
       <StyledHr />
       <StyledText>{description}</StyledText>
-      <StyledProductButton>Buy Now</StyledProductButton>
+
+      <Link to={`/products/${id}`} state={data}>
+        <StyledProductButton>Buy Now</StyledProductButton>
+      </Link>
     </CardContiner>
   );
 };
