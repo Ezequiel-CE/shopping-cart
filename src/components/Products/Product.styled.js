@@ -9,6 +9,7 @@ const CardContiner = styled.div`
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
   line-height: 1.5;
+  margin-bottom: 70px;
 `;
 
 const StyledSpan = styled.span`
@@ -30,11 +31,7 @@ const StyledSpan = styled.span`
 `;
 
 const StyledImg = styled.img`
-  width: 180%;
-  margin-left: -40%;
-  margin-right: -40%;
-  margin-top: -5px;
-  margin-bottom: 30px;
+  width: 300px;
   max-width: none;
 `;
 
@@ -82,6 +79,7 @@ const StyledProductButton = styled(StyledButton)`
   transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
     0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 `;
 
 export {

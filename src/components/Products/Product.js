@@ -9,21 +9,15 @@ import {
   StyledProductButton,
 } from "./Product.styled";
 
-const Product = () => {
+const Product = ({ data }) => {
+  const { description, image, price, title } = data;
   return (
     <CardContiner>
-      <StyledSpan>$120</StyledSpan>
-      <StyledImg
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/26438/shoe.png"
-        alt="product"
-      />
-      <StyledTitle className="product__title">Nike Roshe Run Print</StyledTitle>
+      <StyledSpan>${price}</StyledSpan>
+      <StyledImg src={image} alt="product" />
+      <StyledTitle>{title}</StyledTitle>
       <StyledHr />
-      <StyledText>
-        The Nike Roshe One Print Men's Shoe offers breathability, lightweight
-        cushioning and bold style with an injected unit midsole and colorful
-        mesh upper.
-      </StyledText>
+      <StyledText>{description}</StyledText>
       <StyledProductButton>Buy Now</StyledProductButton>
     </CardContiner>
   );

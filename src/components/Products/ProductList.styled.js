@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const ProductContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  background-color: red;
-  margin-top: 100px;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
 `;
