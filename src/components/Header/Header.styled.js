@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const NavBar = styled.nav`
   display: flex;
+  align-items: center;
   gap: 50px;
 `;
 

@@ -37,6 +37,11 @@ export const StyledDetailButton = styled(StyledButton)`
     0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 `;
 
 export const StyledSelect = styled.select`
@@ -69,4 +74,11 @@ export const StyledDescriptionTag = styled.span`
     0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 30px 25px -20px rgba(0, 0, 0, 0.15);
   font-weight: 700;
+`;
+
+export const StyledCart = styled.img`
+  width: 40px;
+
+  filter: invert(99%) sepia(5%) saturate(24%) hue-rotate(173deg)
+    brightness(114%) contrast(88%);
 `;

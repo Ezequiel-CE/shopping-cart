@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import Home from "./views/Home";
 import { GlobalStyle } from "./GlobalStyle";
 import ProductDetail from "./components/Details/Details";
-import Cart from "./components/Cart";
 import ProductList from "./components/Products/ProductList";
 
 const App = () => {
@@ -45,8 +44,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Header />
-      <Cart cartData={shoppingCart} />
+      <Header products={shoppingCart} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductList products={products} />} />

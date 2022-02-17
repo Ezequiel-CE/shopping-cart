@@ -13,7 +13,9 @@ import {
   StyledDetailButton,
   StyledSelect,
   StyledDescriptionTag,
+  StyledCart,
 } from "./Details.styled";
+import cartLogo from "../../assets/cart.svg";
 
 const ProductDetail = ({ addTocart }) => {
   const [amount, setAmount] = useState(1);
@@ -43,7 +45,7 @@ const ProductDetail = ({ addTocart }) => {
           <option value="4">4</option>
         </StyledSelect>
         <StyledDetailButton onClick={() => addTocart(state, amount)}>
-          Add to cart
+          Add to cart <StyledCart src={cartLogo} alt="add-to-cart" />
         </StyledDetailButton>
       </StyledTextContainer>
     </StyledContainer>

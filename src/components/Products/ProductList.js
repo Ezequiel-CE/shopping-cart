@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { ProductContainer } from "./ProductList.styled";
 import Product from "./Product";
 
