@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { StyledButton } from "../shared/shared.styles";
 
 const CardContiner = styled.div`
   position: relative;
@@ -30,18 +31,6 @@ const StyledSpan = styled.span`
   font-weight: 700;
 `;
 
-const StyledImg = styled.img`
-  width: 300px;
-  max-width: none;
-`;
-
-const StyledTitle = styled.h1`
-  font-size: 30px;
-  color: rgba(0, 0, 0, 0.95);
-  margin: 0 0 0.5em 0;
-  line-height: 1.1;
-`;
-
 const StyledHr = styled.hr`
   border: 0;
   height: 3px;
@@ -58,19 +47,6 @@ const StyledText = styled.p`
   }
 `;
 
-const StyledButton = styled.button`
-  display: inline-block;
-  color: #fff;
-  text-align: center;
-  padding: 1.75em 3.5em;
-  white-space: nowrap;
-  border-radius: 5px;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  font-weight: 700;
-`;
-
 const StyledProductButton = styled(StyledButton)`
   position: absolute;
   bottom: -30px;
@@ -82,13 +58,4 @@ const StyledProductButton = styled(StyledButton)`
   cursor: pointer;
 `;
 
-export {
-  CardContiner,
-  StyledSpan,
-  StyledImg,
-  StyledTitle,
-  StyledHr,
-  StyledText,
-  StyledButton,
-  StyledProductButton,
-};
+export { CardContiner, StyledSpan, StyledHr, StyledText, StyledProductButton };
