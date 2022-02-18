@@ -4,7 +4,7 @@ import { CartTitleStyled } from "./Cart.styled";
 import CartIco from "./Cartico";
 import CartPreviewItem from "./CartPreviewItem";
 
-const Cart = ({ cartData, plusModifier, minusModifier }) => {
+const Cart = ({ cartData, plusModifier, minusModifier, deleteItemCart }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -31,6 +31,7 @@ const Cart = ({ cartData, plusModifier, minusModifier }) => {
               key={i}
               plusModifier={plusModifier}
               minusModifier={minusModifier}
+              deleteItemCart={deleteItemCart}
             />
           ))}
         </Offcanvas.Body>

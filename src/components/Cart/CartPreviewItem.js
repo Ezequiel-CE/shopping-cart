@@ -12,7 +12,12 @@ import {
   StyledDelete,
 } from "./CartPreviewItem.styled";
 
-const CartPreviewItem = ({ itemData, plusModifier, minusModifier }) => {
+const CartPreviewItem = ({
+  itemData,
+  plusModifier,
+  minusModifier,
+  deleteItemCart,
+}) => {
   const { item, amount } = itemData;
 
   const shortenTittle = (title) => {
@@ -43,7 +48,7 @@ const CartPreviewItem = ({ itemData, plusModifier, minusModifier }) => {
       <div style={{ width: "72px" }}>
         <StyledPricePrev>${(amount * item.price).toFixed(2)}</StyledPricePrev>
       </div>
-      <StyledDelete>
+      <StyledDelete onClick={() => deleteItemCart(itemData)}>
         <img src={closeImg2} style={{ width: "30px" }} alt="" />
       </StyledDelete>
     </StyledConteinerPrev>
