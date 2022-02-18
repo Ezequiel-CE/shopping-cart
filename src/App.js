@@ -30,30 +30,6 @@ const App = () => {
     }
   };
 
-  // const plusModifier = (data) => {
-  //   addTocart(data, 1);
-  // };
-
-  // const minusModifier = (data) => {
-  //   const repeateELIndex = shoppingCart.findIndex(
-  //     (item) => item.id === data.id
-  //   );
-  //   const copy = [...shoppingCart];
-  //   copy[repeateELIndex].amount -= 1;
-  //   //if amount 0 delete object
-  //   if (copy[repeateELIndex].amount === 0) {
-  //     const newCopy = copy.filter((item) => item.id !== data.id);
-  //     setShoppingCart(newCopy);
-  //   } else {
-  //     setShoppingCart(copy);
-  //   }
-  // };
-
-  // const deleteItemCart = (data) => {
-  //   const newCart = shoppingCart.filter((item) => item.id !== data.id);
-  //   setShoppingCart(newCart);
-  // };
-
   const fetchItems = async () => {
     try {
       const response = await fetch("https://fakestoreapi.com/products");
@@ -76,7 +52,6 @@ const App = () => {
         products={shoppingCart}
         changeCart={changeCart}
         addTocart={addTocart}
-        cartData={shoppingCart}
       />
       <Routes>
         <Route path="/" element={<Home />} />

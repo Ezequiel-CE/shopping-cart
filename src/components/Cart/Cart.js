@@ -4,7 +4,7 @@ import { CartTitleStyled } from "./Cart.styled";
 import CartIco from "./Cartico";
 import CartPreviewItem from "./CartPreviewItem";
 
-const Cart = ({ cartData, changeCart, addTocart, shoppingCart }) => {
+const Cart = ({ cartData, changeCart, addTocart }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,10 +15,8 @@ const Cart = ({ cartData, changeCart, addTocart, shoppingCart }) => {
   };
 
   const minusModifier = (data) => {
-    const repeateELIndex = shoppingCart.findIndex(
-      (item) => item.id === data.id
-    );
-    const copy = [...shoppingCart];
+    const repeateELIndex = cartData.findIndex((item) => item.id === data.id);
+    const copy = [...cartData];
     copy[repeateELIndex].amount -= 1;
     //if amount 0 delete object
     if (copy[repeateELIndex].amount === 0) {
@@ -30,7 +28,7 @@ const Cart = ({ cartData, changeCart, addTocart, shoppingCart }) => {
   };
 
   const deleteItemCart = (data) => {
-    const newCart = shoppingCart.filter((item) => item.id !== data.id);
+    const newCart = cartData.filter((item) => item.id !== data.id);
     changeCart(newCart);
   };
 

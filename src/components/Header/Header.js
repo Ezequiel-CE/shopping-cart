@@ -3,7 +3,7 @@ import { Container } from "../shared/shared.styles";
 import { NavBar, StyledLink } from "./Header.styled";
 import Cart from "../Cart/Cart";
 
-const Header = ({ products, changeCart, addTocart, cartData }) => {
+const Header = ({ products, changeCart, addTocart }) => {
   return (
     <Container>
       <h1>Fake store</h1>
@@ -15,7 +15,6 @@ const Header = ({ products, changeCart, addTocart, cartData }) => {
           cartData={products}
           changeCart={changeCart}
           addTocart={addTocart}
-          shoppingCart={cartData}
         />
       </NavBar>
     </Container>
