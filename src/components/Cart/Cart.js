@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
+import { CartTitleStyled } from "./Cart.styled";
 import CartIco from "./Cartico";
+import CartPreviewItem from "./CartPreviewItem";
 
 const Cart = ({ cartData }) => {
   const [show, setShow] = useState(false);
@@ -12,13 +14,20 @@ const Cart = ({ cartData }) => {
     <>
       <CartIco ShowHandler={handleShow} cartData={cartData} />
 
-      <Offcanvas show={show} onHide={handleClose} placement="end">
+      <Offcanvas
+        show={show}
+        onHide={handleClose}
+        placement="end"
+        style={{ width: "500px" }}
+      >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <CartTitleStyled>Your shopping cart</CartTitleStyled>
+          {cartData.map((item, i) => (
+            <CartPreviewItem itemData={item} key={i} />
+          ))}
         </Offcanvas.Body>
       </Offcanvas>
     </>
