@@ -10,6 +10,10 @@ const App = () => {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [products, setProducts] = useState([]);
 
+  const changeCart = (array) => {
+    setShoppingCart(array);
+  };
+
   const addTocart = (data, amount) => {
     const repeated = shoppingCart.some((item) => item.id === data.id);
 
@@ -26,29 +30,29 @@ const App = () => {
     }
   };
 
-  const plusModifier = (data) => {
-    addTocart(data, 1);
-  };
+  // const plusModifier = (data) => {
+  //   addTocart(data, 1);
+  // };
 
-  const minusModifier = (data) => {
-    const repeateELIndex = shoppingCart.findIndex(
-      (item) => item.id === data.id
-    );
-    const copy = [...shoppingCart];
-    copy[repeateELIndex].amount -= 1;
-    //if amount 0 delete object
-    if (copy[repeateELIndex].amount === 0) {
-      const newCopy = copy.filter((item) => item.id !== data.id);
-      setShoppingCart(newCopy);
-    } else {
-      setShoppingCart(copy);
-    }
-  };
+  // const minusModifier = (data) => {
+  //   const repeateELIndex = shoppingCart.findIndex(
+  //     (item) => item.id === data.id
+  //   );
+  //   const copy = [...shoppingCart];
+  //   copy[repeateELIndex].amount -= 1;
+  //   //if amount 0 delete object
+  //   if (copy[repeateELIndex].amount === 0) {
+  //     const newCopy = copy.filter((item) => item.id !== data.id);
+  //     setShoppingCart(newCopy);
+  //   } else {
+  //     setShoppingCart(copy);
+  //   }
+  // };
 
-  const deleteItemCart = (data) => {
-    const newCart = shoppingCart.filter((item) => item.id !== data.id);
-    setShoppingCart(newCart);
-  };
+  // const deleteItemCart = (data) => {
+  //   const newCart = shoppingCart.filter((item) => item.id !== data.id);
+  //   setShoppingCart(newCart);
+  // };
 
   const fetchItems = async () => {
     try {
@@ -70,9 +74,9 @@ const App = () => {
       <GlobalStyle />
       <Header
         products={shoppingCart}
-        plusModifier={plusModifier}
-        minusModifier={minusModifier}
-        deleteItemCart={deleteItemCart}
+        changeCart={changeCart}
+        addTocart={addTocart}
+        cartData={shoppingCart}
       />
       <Routes>
         <Route path="/" element={<Home />} />
