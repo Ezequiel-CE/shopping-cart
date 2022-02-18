@@ -1,6 +1,6 @@
-import { width } from "dom-helpers";
 import React from "react";
-import testImg from "../../assets/test.jpg";
+import closeImg2 from "../../assets/close2.svg";
+
 import {
   StyledPreviwImg,
   StyledConteinerPrev,
@@ -8,9 +8,11 @@ import {
   StyledModi,
   StyledTextPrev,
   StyledPricePrev,
+  StyledModificador,
+  StyledDelete,
 } from "./CartPreviewItem.styled";
 
-const CartPreviewItem = ({ itemData }) => {
+const CartPreviewItem = ({ itemData, plusModifier, minusModifier }) => {
   const { item, amount } = itemData;
 
   const shortenTittle = (title) => {
@@ -29,14 +31,21 @@ const CartPreviewItem = ({ itemData }) => {
         <StyledProductTitle>{shortenTittle(item.title)}</StyledProductTitle>
 
         <StyledModi>
-          <div>+</div>
-          <div>{amount}</div>
-          <div>-</div>
+          <StyledModificador onClick={() => plusModifier(itemData)}>
+            +
+          </StyledModificador>
+          <div style={{ cursor: "default" }}>{amount}</div>
+          <StyledModificador onClick={() => minusModifier(itemData)}>
+            -
+          </StyledModificador>
         </StyledModi>
       </StyledTextPrev>
       <div style={{ width: "72px" }}>
         <StyledPricePrev>${(amount * item.price).toFixed(2)}</StyledPricePrev>
       </div>
+      <StyledDelete>
+        <img src={closeImg2} style={{ width: "30px" }} alt="" />
+      </StyledDelete>
     </StyledConteinerPrev>
   );
 };
