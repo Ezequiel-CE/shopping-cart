@@ -17,16 +17,29 @@ import {
 } from "./Details.styled";
 import cartLogo from "../../assets/cart.svg";
 
-const ProductDetail = ({ addTocart }) => {
+const ProductDetail = ({ products, setShoppingCart }) => {
   const [amount, setAmount] = useState(1);
+  const { state } = useLocation();
+  const { category, description, image, price, title } = state;
 
   const handleOptions = (e) => {
     const option = e.target.value;
     setAmount(Number(option));
   };
 
-  const { state } = useLocation();
-  const { category, description, image, price, title } = state;
+  const addTocart = (data, amount) => {
+    const repeated = products.some((item) => item.id === data.id);
+
+    if (repeated) {
+      //create a copy for the state and update the state width the copy;
+      const repeateELIndex = products.findIndex((item) => item.id === data.id);
+      const copy = [...products];
+      copy[repeateELIndex].amount += amount;
+      setShoppingCart(copy);
+    } else {
+      setShoppingCart([...products, { id: data.id, item: data, amount }]);
+    }
+  };
   return (
     <StyledContainer>
       <StyledDescriptionTag>

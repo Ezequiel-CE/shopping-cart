@@ -49,7 +49,7 @@ const CartPreviewItem = ({
         <StyledPricePrev>${(amount * item.price).toFixed(2)}</StyledPricePrev>
       </div>
       <StyledDelete onClick={() => deleteItemCart(itemData)}>
-        <img src={closeImg2} style={{ width: "30px" }} alt="" />
+        <img src={closeImg2} style={{ width: "30px" }} alt="product" />
       </StyledDelete>
     </StyledConteinerPrev>
   );

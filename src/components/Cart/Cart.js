@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
-import { CartTitleStyled } from "./Cart.styled";
+import {
+  CartTitleStyled,
+  StyledCartButton,
+  StyledTotal,
+  StyledAlert,
+} from "./Cart.styled";
 import CartIco from "./Cartico";
 import CartPreviewItem from "./CartPreviewItem";
 
-const Cart = ({ cartData, changeCart, addTocart }) => {
+const Cart = ({ cartData, setShoppingCart }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const plusModifier = (data) => {
-    addTocart(data, 1);
+    //create a copy for the state and update the state width the copy;
+    const repeateELIndex = cartData.findIndex((item) => item.id === data.id);
+    const copy = [...cartData];
+    copy[repeateELIndex].amount += 1;
+    setShoppingCart(copy);
   };
 
   const minusModifier = (data) => {
@@ -21,15 +30,35 @@ const Cart = ({ cartData, changeCart, addTocart }) => {
     //if amount 0 delete object
     if (copy[repeateELIndex].amount === 0) {
       const newCopy = copy.filter((item) => item.id !== data.id);
-      changeCart(newCopy);
+      setShoppingCart(newCopy);
     } else {
-      changeCart(copy);
+      setShoppingCart(copy);
     }
   };
 
   const deleteItemCart = (data) => {
     const newCart = cartData.filter((item) => item.id !== data.id);
-    changeCart(newCart);
+    setShoppingCart(newCart);
+  };
+
+  const getTotal = () => {
+    const total = cartData.reduce(
+      (acc, product) => acc + product.item.price * product.amount,
+      0
+    );
+    return total.toFixed(2);
+  };
+
+  const thanks = () => {
+    alert(`       ▄      ▄    
+    ▐▒▀▄▄▄▄▀▒▌   
+  ▄▀▒▒▒▒▒▒▒▒▓▀▄  
+▄▀░█░░░░█░░▒▒▒▐  
+▌░░░░░░░░░░░▒▒▐  
+▐▒░██▒▒░░░░░░░▒▐  
+▐▒░▓▓▒▒▒░░░░░░▄▀  
+▀▄░▀▀▀▀░░░░▄▀    
+  ▀▀▄▄▄▄▄▀▀       `);
   };
 
   return (
@@ -56,6 +85,14 @@ const Cart = ({ cartData, changeCart, addTocart }) => {
               deleteItemCart={deleteItemCart}
             />
           ))}
+          {cartData.length > 0 ? (
+            <>
+              <StyledTotal>Total: ${getTotal()}</StyledTotal>
+              <StyledCartButton onClick={thanks}>Checkout</StyledCartButton>
+            </>
+          ) : (
+            <StyledAlert>Your cart is empty</StyledAlert>
+          )}
         </Offcanvas.Body>
       </Offcanvas>
     </>

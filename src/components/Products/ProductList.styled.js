@@ -8,3 +8,9 @@ export const ProductContainer = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 20px;
 `;
+
+export const SpinerContainerStyle = styled.div`
+  height: 80vh;
+  display: grid;
+  place-items: center;
+`;

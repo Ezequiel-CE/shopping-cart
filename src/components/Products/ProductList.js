@@ -1,12 +1,21 @@
-import { ProductContainer } from "./ProductList.styled";
+import { ProductContainer, SpinerContainerStyle } from "./ProductList.styled";
 import Product from "./Product";
+import { Spinner } from "react-bootstrap";
 
 const ProductList = ({ products }) => {
   return (
     <ProductContainer>
-      {products.map((item) => (
-        <Product key={item.id} data={item} />
-      ))}
+      {products.length < 1 ? (
+        <SpinerContainerStyle>
+          <Spinner
+            animation="border"
+            role="status"
+            style={{ width: "80px", height: "80px" }}
+          ></Spinner>
+        </SpinerContainerStyle>
+      ) : (
+        products.map((item) => <Product key={item.id} data={item} />)
+      )}
     </ProductContainer>
   );
 };
