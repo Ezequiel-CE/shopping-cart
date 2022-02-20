@@ -9,4 +9,12 @@ export const GlobalStyle = createGlobalStyle`
 body {
     font-family: 'Roboto', sans-serif;
     background-color:#F0F0F0;
+    height: 100%;
+    width: 100%;
+    
+    
+    
+}
+#root {
+  height: 100%;
 }`;

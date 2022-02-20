@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import { GlobalStyle } from "./GlobalStyle";
 import ProductDetail from "./components/Details/Details";
 import ProductList from "./components/Products/ProductList";
+import { BackgroundContainer } from "./components/shared/shared.styles";
 
 const App = () => {
   const [shoppingCart, setShoppingCart] = useState([]);
@@ -25,23 +26,28 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-      <Header products={shoppingCart} setShoppingCart={setShoppingCart} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ProductList products={products} />} />
-        <Route
-          path="/products/:id"
-          element={
-            <ProductDetail
-              products={shoppingCart}
-              setShoppingCart={setShoppingCart}
-            />
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    <BackgroundContainer>
+      <BrowserRouter>
+        <GlobalStyle />
+        <Header products={shoppingCart} setShoppingCart={setShoppingCart} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/products"
+            element={<ProductList products={products} />}
+          />
+          <Route
+            path="/products/:id"
+            element={
+              <ProductDetail
+                products={shoppingCart}
+                setShoppingCart={setShoppingCart}
+              />
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </BackgroundContainer>
   );
 };
 

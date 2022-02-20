@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import brickImg from "../../assets/brick-back.jpg";
+
+export const BackgroundContainer = styled.div`
+  background-image: url(${brickImg});
+  height: 100vh;
+`;
 
 export const Container = styled.div`
   display: flex;
