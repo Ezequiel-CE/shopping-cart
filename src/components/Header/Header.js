@@ -8,7 +8,7 @@ const Header = ({ products, setShoppingCart }) => {
     <Container>
       <h1>Fake store</h1>
       <NavBar>
-        <StyledLink to="/">Home</StyledLink>
+        <StyledLink to="/shopping-cart">Home</StyledLink>
         <StyledLink to="/products">Products</StyledLink>
         <Cart cartData={products} setShoppingCart={setShoppingCart} />
       </NavBar>
