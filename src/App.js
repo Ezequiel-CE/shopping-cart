@@ -31,7 +31,7 @@ const App = () => {
         <GlobalStyle />
         <Header products={shoppingCart} setShoppingCart={setShoppingCart} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/shopping-cart" element={<Home />} />
           <Route
             path="/products"
             element={<ProductList products={products} />}
