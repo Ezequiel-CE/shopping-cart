@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.1a8a0596.css",
+    "main.js": "/shopping-cart/static/js/main.ca5b2c5b.js",
+    "static/media/bakc2Ff.jpg": "/shopping-cart/static/media/bakc2Ff.38deb18e231dcef1e30f.jpg",
+    "static/media/brick-back.jpg": "/shopping-cart/static/media/brick-back.e8fc80d0a6d761cf02c2.jpg",
+    "index.html": "/shopping-cart/index.html",
+    "static/media/cart.svg": "/shopping-cart/static/media/cart.ec34e04f278866298777c9836305a693.svg",
+    "static/media/close2.svg": "/shopping-cart/static/media/close2.64f09d760e8936f5907a62abff40b422.svg",
+    "main.1a8a0596.css.map": "/shopping-cart/static/css/main.1a8a0596.css.map",
+    "main.ca5b2c5b.js.map": "/shopping-cart/static/js/main.ca5b2c5b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a8a0596.css",
+    "static/js/main.ca5b2c5b.js"
+  ]
+}
