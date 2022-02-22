@@ -3,16 +3,20 @@ import {
   StyledContainerHome,
   StyledTittle,
   StyledHomeButton,
+  StyledTextArea,
 } from "./Homes.styled";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <StyledContainerHome>
-      <StyledTittle>Buying was never that easy!</StyledTittle>
-      <Link to="/products">
-        <StyledHomeButton>go to the Store</StyledHomeButton>
-      </Link>
+      <StyledTextArea>
+        <StyledTittle>Buying was never that easy!</StyledTittle>
+
+        <Link to="/products" style={{ textDecoration: "none" }}>
+          <StyledHomeButton>go to the Store</StyledHomeButton>
+        </Link>
+      </StyledTextArea>
     </StyledContainerHome>
   );
 };

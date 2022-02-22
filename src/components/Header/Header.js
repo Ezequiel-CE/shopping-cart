@@ -10,7 +10,6 @@ const Header = ({ products, setShoppingCart }) => {
       <NavBar>
         <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/products">Products</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
         <Cart cartData={products} setShoppingCart={setShoppingCart} />
       </NavBar>
     </Container>
